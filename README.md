@@ -1,6 +1,17 @@
 # alpine-gh
 
-A simple and lightweight GitHub CLI (`gh`) container running in Alpine Linux.
+[![docker-image][docker-image-badge]][docker-image]
+[![github-workflow][github-workflow-badge]][github-workflow]
+
+[docker-image-badge]: https://img.shields.io/docker/v/rahilp/alpine-gh?label=docker&logo=docker
+[github-workflow-badge]: https://img.shields.io/github/workflow/status/rahil-p/alpine-gh/ci?logo=github
+
+[docker-image]: https://hub.docker.com/r/rahilp/alpine-gh/tags
+[github-workflow]: https://github.com/rahil-p/alpine-gh/actions
+
+A simple [GitHub CLI](https://cli.github.com/) 
+([`gh`](https://cli.github.com/manual/) + [`git`](https://git-scm.com/docs)) container running in 
+[Alpine Linux](https://hub.docker.com/_/alpine).
 
 ## Usage Examples
 
