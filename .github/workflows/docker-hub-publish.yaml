@@ -7,7 +7,7 @@ on:
     - cron: "0 0 * * *"
 
 jobs:
-  build-latest:
+  build:
     name: Publish to Docker Hub
     runs-on: ubuntu-latest
     strategy:
@@ -48,3 +48,17 @@ jobs:
           build-args: |
             git_version=${{ matrix.context.git_version }}
             gh_version=${{ matrix.context.gh_version }}
+
+  update-description:
+    name: Update Docker Hub Repository Description
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Update Repository Description
+        uses: peter-evans/dockerhub-description@v2
+        with:
+          username: ${{secrets.DOCKER_ID}}
+          password: ${{secrets.DOCKER_PASSWORD}}
+          repository: rahilp/alpine-gh
